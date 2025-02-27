@@ -25,6 +25,11 @@ app.register(fastifyCors, {
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
+// Root
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 //Goal
 app.register(createGoalRoute)
 
