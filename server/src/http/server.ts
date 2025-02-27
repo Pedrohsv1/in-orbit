@@ -11,6 +11,8 @@ import { getWeekSummaryRoute } from './routes/week-summary'
 import fastifyCors from '@fastify/cors'
 import dotenv from 'dotenv'
 
+const port = process.env.PORT || 4000
+
 dotenv.config()
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -37,7 +39,7 @@ app.register(getWeekSummaryRoute)
 
 app
   .listen({
-    port: 3333,
+    port,
   })
   .then(() => {
     console.log('Server is running on port 3333')
