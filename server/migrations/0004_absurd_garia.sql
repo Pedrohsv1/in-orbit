@@ -1,0 +1,1 @@
+ALTER TABLE "goal_completions" DROP COLUMN IF EXISTS "completed_at";
