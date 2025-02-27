@@ -11,7 +11,8 @@ type PendingGoal = {
 }
 
 export const getPendingGoals = async (): Promise<PendingGoalsType> => {
-  const response = await fetch('http://localhost:3333/pending-goals')
+  const PENDING_URL = new URL(`${import.meta.env.VITE_API_URL}/pending-goals`)
+  const response = await fetch(PENDING_URL)
   const data = await response.json()
 
   return data

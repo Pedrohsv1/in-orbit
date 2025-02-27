@@ -11,7 +11,9 @@ export type SummaryType = {
 }
 
 export const getSummary = async (): Promise<SummaryType> => {
-  const response = await fetch('http://localhost:3333/summary')
+  const GET_SUMMARY = new URL(`${import.meta.env.VITE_API_URL}/summary`)
+
+  const response = await fetch(GET_SUMMARY)
   const data = await response.json()
 
   return data.summary
