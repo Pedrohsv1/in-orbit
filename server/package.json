@@ -7,7 +7,7 @@
     "seed": "tsx --env-file .env src/db/seed.ts",
     "migrate": "tsx --env-file .env src/db/migrate.ts",
     "build": "tsup",
-    "start": "node --env-file=.env dist/http/server.mjs"
+    "start": "node dist/http/server.mjs"
   },
   "keywords": [],
   "author": "",
