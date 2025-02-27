@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch --env-file .env  src/http/server.ts",
-    "seed": "tsx --env-file .env src/db/seed.ts"
+    "seed": "tsx --env-file .env src/db/seed.ts",
+    "migrate": "tsx --env-file .env src/db/migrate.ts",
+    "build": "tsup",
+    "start": "node --env-file .env dist/http/server.mjs"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,7 @@
     "@biomejs/biome": "1.8.3",
     "@types/node": "^22.5.4",
     "drizzle-kit": "^0.24.2",
+    "tsup": "^8.4.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.2"
   },
@@ -21,6 +25,7 @@
     "@fastify/cors": "^9.0.1",
     "@paralleldrive/cuid2": "^2.2.2",
     "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.32.2",
     "fastify": "^4.28.1",
     "fastify-type-provider-zod": "^2.0.0",
