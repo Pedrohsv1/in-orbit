@@ -9,6 +9,9 @@ import { createCompletionRoute } from './routes/create-completion'
 import { getPendingGoalsRoute } from './routes/pending-goals'
 import { getWeekSummaryRoute } from './routes/week-summary'
 import fastifyCors from '@fastify/cors'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
