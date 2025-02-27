@@ -1,17 +1,17 @@
-import { Dialog } from "./components/ui/dialog";
-import { CreateGoal } from "./components/create-goal";
-import { Summary } from "./components/summary";
-import { EmptyGoals } from "./components/empty-goals";
-import { useQuery } from "@tanstack/react-query";
-import { getSummary } from "./http/get-summary";
-import { ErrorComp } from "./components/error";
+import { Dialog } from './components/ui/dialog'
+import { CreateGoal } from './components/create-goal'
+import { Summary } from './components/summary'
+import { EmptyGoals } from './components/empty-goals'
+import { useQuery } from '@tanstack/react-query'
+import { getSummary } from './http/get-summary'
+import { ErrorComp } from './components/error'
 
 export function App() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["summary"],
+    queryKey: ['summary'],
     queryFn: getSummary,
     staleTime: 1000 * 60,
-  });
+  })
 
   return (
     <Dialog>
@@ -26,7 +26,7 @@ export function App() {
       )}
       <CreateGoal />
     </Dialog>
-  );
+  )
 }
 
 export function Spinner() {
@@ -39,6 +39,15 @@ export function Spinner() {
       <p className="text-white text-lg font-semibold animate-pulse">
         Loading...
       </p>
+      <p className="max-w-xs text-center">
+        <span className="text-white text-sm font-light animate-pulse">
+          Por favor, aguarde
+        </span>
+        <span className="text-white/70  text-sm font-light animate-pulse">
+          , pois o RENDER (plataforma de hospedagem gratuita) pode levar entre
+          50 segundos a 1 minuto para a primeira resposta.
+        </span>
+      </p>
     </div>
-  );
+  )
 }
