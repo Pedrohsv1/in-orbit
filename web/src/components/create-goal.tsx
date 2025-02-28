@@ -60,11 +60,13 @@ export function CreateGoal() {
               <X className="size-5 text-zinc-600 hover:text-zinc-500" />
             </DialogClose>
           </div>
-          <DialogDescription>
-            Adicione atividades que{' '}
-            <span className="underline">te fazem bem</span> e que você quer
-            continuar praticando toda semana.
-          </DialogDescription>
+          <div className="hidden md:block">
+            <DialogDescription className="">
+              Adicione atividades que{' '}
+              <span className="underline">te fazem bem</span> e que você quer
+              continuar praticando toda semana.
+            </DialogDescription>
+          </div>
         </div>
         <form
           onSubmit={handleSubmit(handleCreateGoal)}
